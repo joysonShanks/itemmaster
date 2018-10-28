@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity(name = "productoffer")
 public class ProductOffer {
@@ -16,11 +14,11 @@ public class ProductOffer {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 
-	@OneToOne
-	@JoinColumn
-	private ProductBasic productBasic;
-
 	private String msrp;
+
+	public Long getId() {
+		return id;
+	}
 
 	public String getMsrp() {
 		return msrp;
@@ -28,13 +26,5 @@ public class ProductOffer {
 
 	public void setMsrp(String msrp) {
 		this.msrp = msrp;
-	}
-
-	public ProductBasic getProductBasic() {
-		return productBasic;
-	}
-
-	public void setProductBasic(ProductBasic productBasic) {
-		this.productBasic = productBasic;
 	}
 }

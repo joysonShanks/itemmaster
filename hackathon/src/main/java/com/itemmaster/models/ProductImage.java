@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity(name = "productimage")
 public class ProductImage {
@@ -16,12 +14,12 @@ public class ProductImage {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 
-	@OneToOne
-	@JoinColumn
-	private ProductBasic productBasic;
-
 	private String mainImageUrl;
 	private String productSecondaryImageURL;
+
+	public Long getId() {
+		return id;
+	}
 
 	public String getMainImageUrl() {
 		return mainImageUrl;
@@ -37,14 +35,6 @@ public class ProductImage {
 
 	public void setProductSecondaryImageURL(String productSecondaryImageURL) {
 		this.productSecondaryImageURL = productSecondaryImageURL;
-	}
-
-	public ProductBasic getProductBasic() {
-		return productBasic;
-	}
-
-	public void setProductBasic(ProductBasic productBasic) {
-		this.productBasic = productBasic;
 	}
 
 }

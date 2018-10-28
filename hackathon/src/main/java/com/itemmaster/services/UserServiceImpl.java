@@ -6,6 +6,10 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 /*import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,7 +26,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	/*@Override
+	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Users user = userRepository.findByUsername(username);
 
@@ -32,14 +36,15 @@ public class UserServiceImpl implements UserService {
 
 		List<GrantedAuthority> authorities = new ArrayList<>();
 
-		authorities.add(new SimpleGrantedAuthority("USER"));
-		authorities.add(new SimpleGrantedAuthority("ADMIN"));
+		user.getRoles().forEach(role -> {
+			authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
+		});
 
-		UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getUserName(),
+		UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getUsername(),
 				user.getPassword(), authorities);
 
 		return userDetails;
-	}*/
+	}
 
 	@Override
 	public void saveUser(Users user) {

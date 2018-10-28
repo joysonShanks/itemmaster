@@ -1,10 +1,10 @@
 package com.itemmaster.utils;
 
-public class ProductDataEntryException extends Exception {
+public class DataEntryException extends Exception {
 
 	private static final long serialVersionUID = -6392199074649311024L;
 
-	public ProductDataEntryException(String message) {
+	public DataEntryException(String message) {
 		super(message);
 	}
 }

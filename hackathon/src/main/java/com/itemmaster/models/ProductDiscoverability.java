@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity(name = "productdiscoverability")
 public class ProductDiscoverability {
@@ -20,11 +18,11 @@ public class ProductDiscoverability {
 	private Boolean isReadyToEat;
 	private Integer count;
 	private Integer size;
-
-	@OneToOne
-	@JoinColumn
-	private ProductBasic productBasic;
-
+	
+	public Long getId() {
+		return id;
+	}
+	
 	public String getFlavour() {
 		return flavour;
 	}
@@ -57,11 +55,4 @@ public class ProductDiscoverability {
 		this.size = size;
 	}
 
-	public ProductBasic getProductBasic() {
-		return productBasic;
-	}
-
-	public void setProductBasic(ProductBasic productBasic) {
-		this.productBasic = productBasic;
-	}
 }

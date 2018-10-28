@@ -2,13 +2,9 @@ package com.itemmaster.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import com.itemmaster.utils.ProductStatus;
 
 @Entity(name = "productbasic")
 public class ProductBasic {
@@ -31,15 +27,8 @@ public class ProductBasic {
 	private String manufacturePartName;
 	private String modelNumber;
 
-	@Enumerated(EnumType.STRING)
-	private ProductStatus productStatus;
-
-	public ProductStatus getProductStatus() {
-		return productStatus;
-	}
-
-	public void setProductStatus(ProductStatus productStatus) {
-		this.productStatus = productStatus;
+	public Long getId() {
+		return id;
 	}
 
 	public String getSku() {

@@ -1,10 +1,19 @@
 package com.itemmaster.models;
 
+import java.sql.Date;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity(name = "users")
 public class Users {
@@ -14,20 +23,48 @@ public class Users {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 
-	@Column(name = "fisrtname")
-	private String firstName;
-
-	@Column(name = "lastname")
-	private String lastName;
-
 	@Column(name = "username", unique = true)
 	private String username;
 
 	@Column(name = "password")
 	private String password;
 
-	@Column(name = "isadmin")
-	private boolean isAdmin;
+	@Column(name = "firstname")
+	private String firstName;
+
+	@Column(name = "lastname")
+	private String lastName;
+
+	@Column(name = "dateofbirth")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date dateOfBirth;
+
+	@Column(name = "email")
+	private String email;
+
+	/**
+	 * Roles are being eagerly loaded here because they are a fairly small
+	 * collection of items for this example.
+	 */
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+	private List<Role> roles;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -45,28 +82,28 @@ public class Users {
 		this.lastName = lastName;
 	}
 
-	public String getUsername() {
-		return username;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setUserName(String userName) {
-		this.username = userName;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
-	public boolean isAdmin() {
-		return isAdmin;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setAdmin(boolean isAdmin) {
-		this.isAdmin = isAdmin;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getPassword() {
-		return password;
+	public List<Role> getRoles() {
+		return roles;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 
 }

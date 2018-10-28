@@ -1,0 +1,84 @@
+{"sku" : "1234", "productName" : "DummyDemp", "producuctIdentifier" : "1234", "productIdType" : "UPC", "productId" : "dummyId", "shortDescription" : "dummyDescription", "keyFeatures" : "dummyFeatures", "unitsPerConsumerUnit" : "dummy", "brand" : "dummy", "manufacturer" : "dummy", "manufacturePartName" : "dummy", "modelNumber" : "dummy", "productStatus" : 0}
+
+
+{ "productBasic" : { "id" : 1 }, "alcoholContentByVolume" : 42.70, "alcoholProof" : "no-proof", "alcoholClassAndType" : "whisky", "neutralSpiritsColoringAndFlavoring" : "natural", "wineAppellation" : "none", "wineVarietal" : "none", "vIntegerage" : 7, "isNonGrape" : true, "isEstateBottled" : false, "containsSulfites" : false, "timeAged" : "two yars", "ingredients" : [ "ale", "wheat", "rice" ], "containerType" : "barrel", "isGmoFree" : false, "servingSize" : 4.0, "servingsPerContainer" : 100, "calories" : 10, "caloriesFromFat" : 20, "totalFat" : 10, "totalFatPercentageDailyValue" : 10.2, "fatCaloriesPerGram" : 2, "totalCarbohydrate" : 7, "totalCarbohydratePercentageDailyValue" : 22.2, "carbohydrateCaloriesPerGram" : 3, "nutrientName" : "protein", "nutrientAmount" : 10, "nutrientPercentageDailyValue" : 13.2, "nutrientFootnote" : "dont drink this", "nutrients" : "some ingredients", "proteinCaloriesPerGram" : 4, "totalProteinPercentageDailyValue" : 12.3, "totalProtein" : 2, "foodForm" : "alchohol", "isImitation" : false, "usdaInspected" : true, "hasHighFructoseCornSyrup" : false, "foodAllergenStatements" : "none", "instructions" : "drink from bottle", "caffeineDesignation" : "ccd", "spiceLevel" : "none", "isMadeInHomeKitchen" : false, "beefCut" : "none", "poultryCut" : "none", "releaseDate" : "2018-02-01", "isHealthyIncentive" : false, "isSnapEligible" : false, "isWICEligible" : true }
+
+
+
+	 
+{ "isPrivateLabelOrUnbranded" : false,
+	 "isExclusiveBrandsIndicator" : true,
+	 "isProp65WarningRequired" : false,
+	 "prop65WarningText" : "Dangerous",
+	 "hasExpiration" : true,
+	 "shelfLife" : 4,
+	 "hasPricePerUnit" : true,
+	 "pricePerUnitQuantity" : 6,
+	 "pricePerUnitUom" : "none",
+	 "hasGMOs" : true,
+	 "isTemperatureSensitive" : false,
+	 "hasStateRestrictions" : true,
+	 "states" : ["karnataka", "tamil nadu", "kerala", "telangana"],
+	 "zipCodes" : [123456, 234567, 343554, 345678],
+	 "stateRestrictionsText" : "Do not sell it here",
+	 "stateRestrictions" : "none",
+	 "isIntegerendedForHumanConsumption" : false,
+	 "isNutritionFactsLabelRequired" : true,
+	 "nutritionFactsLabel" : "some label",
+	 "nutritionIngredientsImage" : "some url",
+	 "ingredientListImage" : "some image",
+	 "hasIngredientList" : false,
+	 "isPerishable" : true }
+
+{
+    "productBasic" : {"id" : 1}, 
+    "isSkuUpdate": false,
+    "safeHandlingInstructions" : "none",
+    "cuisine" : "Italian",
+    "foodPreparationTips" : "put hot water and eat it",
+    "foodStorageTips" : "store in cold areas",
+    "character" : "none"
+}
+
+{
+    "productBasic" : {"id": 1},
+    "msrp" : "This product does not have any offer"
+}
+
+{
+    "productBasic" : {"id": 1},
+    "mainImageUrl" : "Some image",
+    "productSecondaryImageURL" : "some url"
+}
+
+{
+    "productBasic" : {"id": 1},
+    "flavour" : "Green apple",
+    "isReadyToEat" : true,
+    "count" : 10,
+    "size" : 12
+}
+
+{
+    "poductBasic" : { "id" : 1 },
+    "productAdditionalCategories" : { "id" : 2 },
+    "productCompliance" : { "id" : 3 },
+    "productDiscoverability" : { "id" : 7 },
+    "productImage" : { "id" : 6 },
+    "productNiceToHave" : { "id" : 4 },
+    "productOffer" : { "id" : 5 },
+    "productStatus" : 2,
+    "approvedBy" : "JOyson"
+}
+
+{
+    "poductBasic" : { "id" : 1 },
+    "productAdditionalCategories" : { "id" : 2 },
+    "productCompliance" : { "id" : 3 },
+    "productDiscoverability" : { "id" : 7 },
+    "productImage" : { "id" : 6 },
+    "productNiceToHave" : { "id" : 4 },
+    "productOffer" : { "id" : 5 },
+    "productStatus" : 2,
+    "approvedBy" : "JOyson"
+}

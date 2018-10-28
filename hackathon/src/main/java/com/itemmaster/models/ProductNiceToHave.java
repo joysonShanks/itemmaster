@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity(name = "productnicetohave")
 public class ProductNiceToHave {
@@ -16,23 +14,23 @@ public class ProductNiceToHave {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 
-	private Boolean SkuUpdate;
+	private Boolean isSkuUpdate;
 	private String safeHandlingInstructions;
 	private String cuisine;
 	private String foodPreparationTips;
 	private String foodStorageTips;
 	private String character;
 
-	@OneToOne
-	@JoinColumn
-	private ProductBasic productBasic;
-
-	public Boolean isSkuUpdate() {
-		return SkuUpdate;
+	public Long getId() {
+		return id;
 	}
 
-	public void setSkuUpdate(Boolean skuUpdate) {
-		SkuUpdate = skuUpdate;
+	public Boolean getIsSkuUpdate() {
+		return isSkuUpdate;
+	}
+
+	public void setIsSkuUpdate(Boolean isSkuUpdate) {
+		this.isSkuUpdate = isSkuUpdate;
 	}
 
 	public String getSafeHandlingInstructions() {
@@ -73,14 +71,6 @@ public class ProductNiceToHave {
 
 	public void setCharacter(String character) {
 		this.character = character;
-	}
-
-	public ProductBasic getProductBasic() {
-		return productBasic;
-	}
-
-	public void setProductBasic(ProductBasic productBasic) {
-		this.productBasic = productBasic;
 	}
 
 }

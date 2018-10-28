@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity(name = "productadditionalcategories")
 public class ProductAdditionalCategories {
@@ -66,9 +64,9 @@ public class ProductAdditionalCategories {
 	private Boolean isSnapEligible;
 	private Boolean isWICEligible;
 
-	@OneToOne
-	@JoinColumn
-	private ProductBasic productBasic;
+	public Long getId() {
+		return id;
+	}
 
 	public Float getAlcoholContentByVolume() {
 		return alcoholContentByVolume;
@@ -118,31 +116,31 @@ public class ProductAdditionalCategories {
 		this.wineVarietal = wineVarietal;
 	}
 
-	public Integer getVIntegerage() {
+	public Integer getvIntegerage() {
 		return vIntegerage;
 	}
 
-	public void setVIntegerage(Integer vIntegerage) {
+	public void setvIntegerage(Integer vIntegerage) {
 		this.vIntegerage = vIntegerage;
 	}
 
-	public Boolean isNonGrape() {
+	public Boolean getIsNonGrape() {
 		return isNonGrape;
 	}
 
-	public void setNonGrape(Boolean isNonGrape) {
+	public void setIsNonGrape(Boolean isNonGrape) {
 		this.isNonGrape = isNonGrape;
 	}
 
-	public Boolean isEstateBottled() {
+	public Boolean getIsEstateBottled() {
 		return isEstateBottled;
 	}
 
-	public void setEstateBottled(Boolean isEstateBottled) {
+	public void setIsEstateBottled(Boolean isEstateBottled) {
 		this.isEstateBottled = isEstateBottled;
 	}
 
-	public Boolean isContainsSulfites() {
+	public Boolean getContainsSulfites() {
 		return containsSulfites;
 	}
 
@@ -174,11 +172,11 @@ public class ProductAdditionalCategories {
 		this.containerType = containerType;
 	}
 
-	public Boolean isGmoFree() {
+	public Boolean getIsGmoFree() {
 		return isGmoFree;
 	}
 
-	public void setGmoFree(Boolean isGmoFree) {
+	public void setIsGmoFree(Boolean isGmoFree) {
 		this.isGmoFree = isGmoFree;
 	}
 
@@ -334,15 +332,15 @@ public class ProductAdditionalCategories {
 		this.foodForm = foodForm;
 	}
 
-	public Boolean isImitation() {
+	public Boolean getIsImitation() {
 		return isImitation;
 	}
 
-	public void setImitation(Boolean isImitation) {
+	public void setIsImitation(Boolean isImitation) {
 		this.isImitation = isImitation;
 	}
 
-	public Boolean isUsdaInspected() {
+	public Boolean getUsdaInspected() {
 		return usdaInspected;
 	}
 
@@ -350,7 +348,7 @@ public class ProductAdditionalCategories {
 		this.usdaInspected = usdaInspected;
 	}
 
-	public Boolean isHasHighFructoseCornSyrup() {
+	public Boolean getHasHighFructoseCornSyrup() {
 		return hasHighFructoseCornSyrup;
 	}
 
@@ -390,11 +388,11 @@ public class ProductAdditionalCategories {
 		this.spiceLevel = spiceLevel;
 	}
 
-	public Boolean isMadeInHomeKitchen() {
+	public Boolean getIsMadeInHomeKitchen() {
 		return isMadeInHomeKitchen;
 	}
 
-	public void setMadeInHomeKitchen(Boolean isMadeInHomeKitchen) {
+	public void setIsMadeInHomeKitchen(Boolean isMadeInHomeKitchen) {
 		this.isMadeInHomeKitchen = isMadeInHomeKitchen;
 	}
 
@@ -422,35 +420,27 @@ public class ProductAdditionalCategories {
 		this.releaseDate = releaseDate;
 	}
 
-	public Boolean isHealthyIncentive() {
+	public Boolean getIsHealthyIncentive() {
 		return isHealthyIncentive;
 	}
 
-	public void setHealthyIncentive(Boolean isHealthyIncentive) {
+	public void setIsHealthyIncentive(Boolean isHealthyIncentive) {
 		this.isHealthyIncentive = isHealthyIncentive;
 	}
 
-	public Boolean isSnapEligible() {
+	public Boolean getIsSnapEligible() {
 		return isSnapEligible;
 	}
 
-	public void setSnapEligible(Boolean isSnapEligible) {
+	public void setIsSnapEligible(Boolean isSnapEligible) {
 		this.isSnapEligible = isSnapEligible;
 	}
 
-	public Boolean isWICEligible() {
+	public Boolean getIsWICEligible() {
 		return isWICEligible;
 	}
 
-	public void setWICEligible(Boolean isWICEligible) {
+	public void setIsWICEligible(Boolean isWICEligible) {
 		this.isWICEligible = isWICEligible;
-	}
-
-	public ProductBasic getProductBasic() {
-		return productBasic;
-	}
-
-	public void setProductBasic(ProductBasic productBasic) {
-		this.productBasic = productBasic;
 	}
 }

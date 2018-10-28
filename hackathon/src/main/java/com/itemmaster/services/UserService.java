@@ -2,13 +2,13 @@ package com.itemmaster.services;
 
 import java.util.List;
 
+import org.springframework.security.core.userdetails.UserDetailsService;
+
 //import org.springframework.security.core.userdetails.UserDetailsService;
 
 import com.itemmaster.models.Users;
 
-public interface UserService 
-//extends UserDetailsService 
-{
+public interface UserService extends UserDetailsService {
 
 	public void saveUser(Users user);
 

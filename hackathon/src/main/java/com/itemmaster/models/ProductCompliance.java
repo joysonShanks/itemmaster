@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity(name = "productcompliance")
 public class ProductCompliance {
@@ -22,7 +20,7 @@ public class ProductCompliance {
 	private String prop65WarningText;
 	private Boolean hasExpiration;
 	private Integer shelfLife;
-	private Integer hasPricePerUnit;
+	private Boolean hasPricePerUnit;
 	private Integer pricePerUnitQuantity;
 	private String pricePerUnitUom;
 	private Boolean hasGMOs;
@@ -42,32 +40,32 @@ public class ProductCompliance {
 
 	private Boolean hasIngredientList;
 	private Boolean isPerishable;
+	
+	public Long getId() {
+		return id;
+	}
 
-	@OneToOne
-	@JoinColumn
-	private ProductBasic productBasic;
-
-	public Boolean isPrivateLabelOrUnbranded() {
+	public Boolean getIsPrivateLabelOrUnbranded() {
 		return isPrivateLabelOrUnbranded;
 	}
 
-	public void setPrivateLabelOrUnbranded(Boolean isPrivateLabelOrUnbranded) {
+	public void setIsPrivateLabelOrUnbranded(Boolean isPrivateLabelOrUnbranded) {
 		this.isPrivateLabelOrUnbranded = isPrivateLabelOrUnbranded;
 	}
 
-	public Boolean isExclusiveBrandsIndicator() {
+	public Boolean getIsExclusiveBrandsIndicator() {
 		return isExclusiveBrandsIndicator;
 	}
 
-	public void setExclusiveBrandsIndicator(Boolean isExclusiveBrandsIndicator) {
+	public void setIsExclusiveBrandsIndicator(Boolean isExclusiveBrandsIndicator) {
 		this.isExclusiveBrandsIndicator = isExclusiveBrandsIndicator;
 	}
 
-	public Boolean isProp65WarningRequired() {
+	public Boolean getIsProp65WarningRequired() {
 		return isProp65WarningRequired;
 	}
 
-	public void setProp65WarningRequired(Boolean isProp65WarningRequired) {
+	public void setIsProp65WarningRequired(Boolean isProp65WarningRequired) {
 		this.isProp65WarningRequired = isProp65WarningRequired;
 	}
 
@@ -79,7 +77,7 @@ public class ProductCompliance {
 		this.prop65WarningText = prop65WarningText;
 	}
 
-	public Boolean isHasExpiration() {
+	public Boolean getHasExpiration() {
 		return hasExpiration;
 	}
 
@@ -95,11 +93,11 @@ public class ProductCompliance {
 		this.shelfLife = shelfLife;
 	}
 
-	public Integer getHasPricePerUnit() {
+	public Boolean getHasPricePerUnit() {
 		return hasPricePerUnit;
 	}
 
-	public void setHasPricePerUnit(Integer hasPricePerUnit) {
+	public void setHasPricePerUnit(Boolean hasPricePerUnit) {
 		this.hasPricePerUnit = hasPricePerUnit;
 	}
 
@@ -119,7 +117,7 @@ public class ProductCompliance {
 		this.pricePerUnitUom = pricePerUnitUom;
 	}
 
-	public Boolean isHasGMOs() {
+	public Boolean getHasGMOs() {
 		return hasGMOs;
 	}
 
@@ -127,15 +125,15 @@ public class ProductCompliance {
 		this.hasGMOs = hasGMOs;
 	}
 
-	public Boolean isTemperatureSensitive() {
+	public Boolean getIsTemperatureSensitive() {
 		return isTemperatureSensitive;
 	}
 
-	public void setTemperatureSensitive(Boolean isTemperatureSensitive) {
+	public void setIsTemperatureSensitive(Boolean isTemperatureSensitive) {
 		this.isTemperatureSensitive = isTemperatureSensitive;
 	}
 
-	public Boolean isHasStateRestrictions() {
+	public Boolean getHasStateRestrictions() {
 		return hasStateRestrictions;
 	}
 
@@ -175,19 +173,19 @@ public class ProductCompliance {
 		this.stateRestrictions = stateRestrictions;
 	}
 
-	public Boolean isIntegerendedForHumanConsumption() {
+	public Boolean getIsIntegerendedForHumanConsumption() {
 		return isIntegerendedForHumanConsumption;
 	}
 
-	public void setIntegerendedForHumanConsumption(Boolean isIntegerendedForHumanConsumption) {
+	public void setIsIntegerendedForHumanConsumption(Boolean isIntegerendedForHumanConsumption) {
 		this.isIntegerendedForHumanConsumption = isIntegerendedForHumanConsumption;
 	}
 
-	public Boolean isNutritionFactsLabelRequired() {
+	public Boolean getIsNutritionFactsLabelRequired() {
 		return isNutritionFactsLabelRequired;
 	}
 
-	public void setNutritionFactsLabelRequired(Boolean isNutritionFactsLabelRequired) {
+	public void setIsNutritionFactsLabelRequired(Boolean isNutritionFactsLabelRequired) {
 		this.isNutritionFactsLabelRequired = isNutritionFactsLabelRequired;
 	}
 
@@ -215,7 +213,7 @@ public class ProductCompliance {
 		this.ingredientListImage = ingredientListImage;
 	}
 
-	public Boolean isHasIngredientList() {
+	public Boolean getHasIngredientList() {
 		return hasIngredientList;
 	}
 
@@ -223,19 +221,11 @@ public class ProductCompliance {
 		this.hasIngredientList = hasIngredientList;
 	}
 
-	public Boolean isPerishable() {
+	public Boolean getIsPerishable() {
 		return isPerishable;
 	}
 
-	public void setPerishable(Boolean isPerishable) {
+	public void setIsPerishable(Boolean isPerishable) {
 		this.isPerishable = isPerishable;
-	}
-
-	public ProductBasic getProductBasic() {
-		return productBasic;
-	}
-
-	public void setProductBasic(ProductBasic productBasic) {
-		this.productBasic = productBasic;
 	}
 }
