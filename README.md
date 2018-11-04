@@ -32,5 +32,7 @@ Set request header `Authorization : Bearer <JWT Token>`<br/>
 **7. Create product basic api**<br/>
 `curl -X POST -H 'Authorization: Bearer <TOKEN>' -H 'Content-Type: application/json' -i http://localhost:8080/itemmaster/product-basic --data '{"sku" : "1234", "productName" : "DummyDemp", "producuctIdentifier" : "1234", "productIdType" : "UPC", "productId" : "dummyId", "shortDescription" : "dummyDescription", "keyFeatures" : "dummyFeatures", "unitsPerConsumerUnit" : "dummy", "brand" : "dummy", "manufacturer" : "dummy", "manufacturePartName" : "dummy", "modelNumber" : "dummy", "productStatus" : 0}'`
 
+NOTE: You can find request body for all requests [here](https://github.com/joysonShanks/itemmaster/blob/master/hackathon/resources/itemmaster-json-body.txt)
+
 **8. Log out**<br/>
 `curl -X DELETE -H 'Authorization: Bearer <TOKEN>' -i http://localhost:8080/itemmaster/oauth/token`
