@@ -52,7 +52,7 @@ public class ResourceConfig extends ResourceServerConfigurerAdapter {
 
 	private static class OAuthRequestedMatcher implements RequestMatcher {
 		public boolean matches(HttpServletRequest request) {
-			// Determine if the resource called is "/api/**"
+			// Determine if the resource called is "/itemmaster/**"
 			String path = request.getServletPath();
 			if (path.length() >= 12) {
 				path = path.substring(0, 12);

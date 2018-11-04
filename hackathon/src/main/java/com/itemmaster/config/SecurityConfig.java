@@ -13,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.itemmaster.services.UserService;
 
 @Configuration
-@EnableWebSecurity(debug = true)
+@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -23,20 +23,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.formLogin().disable() // disable form authentication
 				.anonymous().disable() // disable anonymous user
-				.httpBasic().and().authorizeRequests().anyRequest()
-				.authenticated();
+				.httpBasic().and().authorizeRequests().anyRequest().authenticated();
 	}
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		BCryptPasswordEncoder encoder = passwordEncoder();
-		/*
-		 * auth.inMemoryAuthentication() // creating user in memory
-		 * .passwordEncoder(encoder).withUser("user").password(encoder.encode("password"
-		 * )).roles("USER").and()
-		 * .withUser("admin").password(encoder.encode("password")).authorities(
-		 * "ROLE_ADMIN");
-		 */
 		auth.userDetailsService(userService).passwordEncoder(encoder);
 	}
 
