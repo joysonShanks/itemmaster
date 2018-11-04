@@ -8,11 +8,3 @@ insert into role (id, role_name, description) values ('3', 'ADMIN', 'Item master
 
 insert into user_role (user_id, role_id) values ('1', '2');
 insert into user_role (user_id, role_id) values ('4', '3');
-
-
-
-https://www.tinmegali.com/en/2017/06/25/oauth2-using-spring/
-
-get access token 
-curl trusted-app:secret@localhost:8080/oauth/token -d "grant_type=password&username=user&password=password"
-
